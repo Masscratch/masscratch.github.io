@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-HK" data-theme="dark" data-size="md">
+<html lang="zh-HK" data-theme="light" data-size="md">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Masscratch 星商相昇 - YLMASS 2026-27</title>
     <style>
-        /* --- Apple Aesthetic Design System --- */
+        /* --- Apple Aesthetic Design System (No Gradients, High-contrast Monochrome) --- */
         :root {
-            --bg-color: #000000;
-            --card-bg: rgba(22, 22, 23, 0.8);
-            --text-main: #f5f5f7;
-            --text-sub: #86868b;
-            --accent: #2997ff;
-            --nav-bg: rgba(22, 22, 23, 0.8);
-            --border: rgba(255, 255, 255, 0.1);
+            --bg-color: #f5f5f7;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --text-main: #1d1d1f;
+            --text-sub: #6e6e73;
+            --accent: #000000;
+            --nav-bg: rgba(245, 245, 247, 0.85);
+            --border: rgba(0, 0, 0, 0.15);
             --font-main: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
             --card-gap: 1.5rem;
-            --overlay-bg: rgba(0, 0, 0, 0.4);
+            --overlay-bg: rgba(255, 255, 255, 0.45);
             
-            --hero-ig-bg: rgba(255, 255, 255, 0.06);
+            --hero-ig-bg: #1d1d1f;
+            --hero-ig-text: #ffffff;
+            --hero-ig-border: transparent;
+
+            --portal-back-bg: rgba(255, 255, 255, 0.95);
+            --portal-back-border: rgba(0, 0, 0, 0.15);
+            --close-btn-bg: rgba(0, 0, 0, 0.05);
+            --close-btn-hover: rgba(0, 0, 0, 0.1);
+            --close-btn-text: #1d1d1f;
+            --avatar-bg-start: #e5e5ea;
+            --avatar-bg-end: #e5e5ea;
+
+            --cookie-bg: rgba(255, 255, 255, 0.95);
+            --cookie-border: rgba(0, 0, 0, 0.15);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #000000;
+            --card-bg: rgba(22, 22, 23, 0.85);
+            --text-main: #f5f5f7;
+            --text-sub: #86868b;
+            --accent: #ffffff;
+            --nav-bg: rgba(22, 22, 23, 0.85);
+            --border: rgba(255, 255, 255, 0.15);
+            --overlay-bg: rgba(0, 0, 0, 0.45);
+            
+            --hero-ig-bg: rgba(255, 255, 255, 0.08);
             --hero-ig-text: #f5f5f7;
             --hero-ig-border: rgba(255, 255, 255, 0.15);
 
@@ -28,36 +54,10 @@
             --close-btn-hover: rgba(255, 255, 255, 0.2);
             --close-btn-text: #ffffff;
             --avatar-bg-start: #3a3a3c;
-            --avatar-bg-end: #1c1c1e;
+            --avatar-bg-end: #3a3a3c;
 
             --cookie-bg: rgba(28, 28, 30, 0.9);
             --cookie-border: rgba(255, 255, 255, 0.15);
-        }
-
-        [data-theme="light"] {
-            --bg-color: #f5f5f7;
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --text-main: #1d1d1f;
-            --text-sub: #6e6e73;
-            --accent: #0071e3;
-            --nav-bg: rgba(245, 245, 247, 0.8);
-            --border: rgba(0, 0, 0, 0.1);
-            --overlay-bg: rgba(255, 255, 255, 0.4);
-            
-            --hero-ig-bg: #1d1d1f;
-            --hero-ig-text: #ffffff;
-            --hero-ig-border: transparent;
-
-            --portal-back-bg: rgba(255, 255, 255, 0.95);
-            --portal-back-border: rgba(0, 0, 0, 0.1);
-            --close-btn-bg: rgba(0, 0, 0, 0.05);
-            --close-btn-hover: rgba(0, 0, 0, 0.1);
-            --close-btn-text: #1d1d1f;
-            --avatar-bg-start: #e5e5ea;
-            --avatar-bg-end: #ffffff;
-
-            --cookie-bg: rgba(255, 255, 255, 0.95);
-            --cookie-border: rgba(0, 0, 0, 0.1);
         }
 
         html[data-size="sm"] { font-size: 14px; }
@@ -136,7 +136,7 @@
             align-items: center;
             text-align: center;
             padding: 0 1rem;
-            background: radial-gradient(circle at center, rgba(41,151,255,0.08) 0%, transparent 75%);
+            background: transparent; /* Removed radial color gradient */
         }
 
         .school-name {
@@ -151,9 +151,7 @@
             font-size: calc(1.6rem + 4.5vw);
             font-weight: 700;
             letter-spacing: -1px;
-            background: linear-gradient(180deg, var(--text-main) 0%, var(--text-sub) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main); /* Removed gradient text fill, utilizing direct theme text color */
             margin-bottom: 1.2rem;
             line-height: 1.15;
             white-space: nowrap;
@@ -191,7 +189,7 @@
 
         .hero-ig-btn:active {
             transform: scale(0.97);
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(128, 128, 128, 0.2);
         }
 
         /* --- Content Container & Grid --- */
@@ -241,7 +239,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--accent);
+            color: var(--text-sub); /* Replaced bright blue with neutral medium-tone grey */
             font-weight: 600;
             margin-bottom: 0.4rem;
         }
@@ -303,7 +301,7 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
         .portal-front {
@@ -352,7 +350,7 @@
             width: 96px;
             height: 96px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--avatar-bg-start), var(--avatar-bg-end));
+            background: var(--avatar-bg-start); /* Removed gradient styling */
             border: 3px solid var(--accent);
             display: flex;
             align-items: center;
@@ -370,7 +368,7 @@
         .back-role {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--text-sub);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 1rem;
@@ -389,14 +387,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: #ffffff;
+            background: var(--text-main); /* Replaced Instagram color gradient with dynamic theme inverse */
+            color: var(--bg-color);
             text-decoration: none;
             padding: 0.75rem 2rem;
             border-radius: 22px;
             font-size: 0.95rem;
             font-weight: 600;
-            box-shadow: 0 8px 16px rgba(220, 39, 67, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .portal-close {
@@ -433,7 +431,7 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border-left: 1px solid var(--border);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.05);
             z-index: 150;
             transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 5rem 1.5rem 1.5rem;
@@ -468,7 +466,7 @@
 
         .setting-btn-opt.active {
             background: var(--accent);
-            color: #ffffff;
+            color: var(--bg-color); /* Matches active theme dynamically without primary colors */
         }
 
         /* --- Cookie Banner --- */
@@ -485,7 +483,7 @@
             -webkit-backdrop-filter: blur(25px);
             border-radius: 20px;
             padding: 1.25rem;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
             z-index: 2000;
             display: flex;
             flex-direction: column;
@@ -547,9 +545,9 @@
             .hero-desc { font-size: 1.5rem; margin-bottom: 2rem; }
             .section-title { font-size: 2.5rem; margin-bottom: 3rem; }
             header { padding: 0 2rem; }
-            .card-static:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
+            .card-static:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
             .card-static:hover .card-arrow { transform: translateX(4px); opacity: 1; }
-            .hero-ig-btn:hover { transform: translateY(-2px) scale(1.02); background-color: rgba(255, 255, 255, 0.12); }
+            .hero-ig-btn:hover { transform: translateY(-2px) scale(1.02); background-color: rgba(128, 128, 128, 0.15); }
             [data-theme="light"] .hero-ig-btn:hover { background-color: #333336; opacity: 0.9; }
             .portal-close:hover { background: var(--close-btn-hover); opacity: 1 !important; }
             .settings-panel { width: 320px; right: -350px; padding: 6rem 2rem 2rem; }
@@ -737,8 +735,8 @@
         let currentLang = 'zh';
         let isCookieAllowed = getCookie('cookieConsent') === 'allowed';
 
-        // UPDATE: Set default theme status explicitly to dark
-        let savedTheme = isCookieAllowed ? (getCookie('prefTheme') || 'dark') : 'dark';
+        // UPDATE: Set default theme status explicitly to LIGHT as requested
+        let savedTheme = isCookieAllowed ? (getCookie('prefTheme') || 'light') : 'light';
         let savedSize = isCookieAllowed ? (getCookie('prefSize') || 'md') : 'md';
         let savedLang = isCookieAllowed ? (getCookie('prefLang') || 'zh') : 'zh';
 
@@ -841,7 +839,7 @@
         const settingsPanel = document.getElementById('settingsPanel');
         toggleSettings.addEventListener('click', e => { e.stopPropagation(); settingsPanel.classList.toggle('is-open'); });
         
-        // FIX: Solved target matching issue with internal SVG parts
+        // Target matching fix
         document.addEventListener('click', e => { 
             if (!settingsPanel.contains(e.target) && !toggleSettings.contains(e.target)) {
                 settingsPanel.classList.remove('is-open'); 
