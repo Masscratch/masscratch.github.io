@@ -5,46 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Masscratch 星商相昇 - YLMASS 2026-27</title>
     <style>
-        /* --- Apple Aesthetic Design System (No Gradients, High-contrast Monochrome) --- */
+        /* --- Apple Aesthetic Design System --- */
         :root {
-            --bg-color: #f5f5f7;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --text-main: #1d1d1f;
-            --text-sub: #6e6e73;
-            --accent: #000000;
-            --nav-bg: rgba(245, 245, 247, 0.85);
-            --border: rgba(0, 0, 0, 0.15);
-            --font-main: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            --card-gap: 1.5rem;
-            --overlay-bg: rgba(255, 255, 255, 0.45);
-            
-            --hero-ig-bg: #1d1d1f;
-            --hero-ig-text: #ffffff;
-            --hero-ig-border: transparent;
-
-            --portal-back-bg: rgba(255, 255, 255, 0.95);
-            --portal-back-border: rgba(0, 0, 0, 0.15);
-            --close-btn-bg: rgba(0, 0, 0, 0.05);
-            --close-btn-hover: rgba(0, 0, 0, 0.1);
-            --close-btn-text: #1d1d1f;
-            --avatar-bg-start: #e5e5ea;
-            --avatar-bg-end: #e5e5ea;
-
-            --cookie-bg: rgba(255, 255, 255, 0.95);
-            --cookie-border: rgba(0, 0, 0, 0.15);
-        }
-
-        [data-theme="dark"] {
             --bg-color: #000000;
-            --card-bg: rgba(22, 22, 23, 0.85);
+            --card-bg: rgba(22, 22, 23, 0.8);
             --text-main: #f5f5f7;
             --text-sub: #86868b;
-            --accent: #ffffff;
-            --nav-bg: rgba(22, 22, 23, 0.85);
-            --border: rgba(255, 255, 255, 0.15);
-            --overlay-bg: rgba(0, 0, 0, 0.45);
+            --accent: #2997ff;
+            --nav-bg: rgba(22, 22, 23, 0.8);
+            --border: rgba(255, 255, 255, 0.1);
+            --font-main: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --card-gap: 1.5rem;
+            --overlay-bg: rgba(0, 0, 0, 0.4);
             
-            --hero-ig-bg: rgba(255, 255, 255, 0.08);
+            --hero-ig-bg: rgba(255, 255, 255, 0.06);
             --hero-ig-text: #f5f5f7;
             --hero-ig-border: rgba(255, 255, 255, 0.15);
 
@@ -54,10 +28,36 @@
             --close-btn-hover: rgba(255, 255, 255, 0.2);
             --close-btn-text: #ffffff;
             --avatar-bg-start: #3a3a3c;
-            --avatar-bg-end: #3a3a3c;
+            --avatar-bg-end: #1c1c1e;
 
             --cookie-bg: rgba(28, 28, 30, 0.9);
             --cookie-border: rgba(255, 255, 255, 0.15);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f5f5f7;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-main: #1d1d1f;
+            --text-sub: #6e6e73;
+            --accent: #0071e3;
+            --nav-bg: rgba(245, 245, 247, 0.8);
+            --border: rgba(0, 0, 0, 0.1);
+            --overlay-bg: rgba(255, 255, 255, 0.4);
+            
+            --hero-ig-bg: #1d1d1f;
+            --hero-ig-text: #ffffff;
+            --hero-ig-border: transparent;
+
+            --portal-back-bg: rgba(255, 255, 255, 0.95);
+            --portal-back-border: rgba(0, 0, 0, 0.1);
+            --close-btn-bg: rgba(0, 0, 0, 0.05);
+            --close-btn-hover: rgba(0, 0, 0, 0.1);
+            --close-btn-text: #1d1d1f;
+            --avatar-bg-start: #e5e5ea;
+            --avatar-bg-end: #ffffff;
+
+            --cookie-bg: rgba(255, 255, 255, 0.95);
+            --cookie-border: rgba(0, 0, 0, 0.1);
         }
 
         html[data-size="sm"] { font-size: 14px; }
@@ -135,7 +135,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
             background: transparent;
         }
 
@@ -145,6 +145,7 @@
             color: var(--text-sub);
             letter-spacing: 2px;
             margin-bottom: 0.8rem;
+            max-width: 95%;
         }
 
         .cabinet-title {
@@ -160,14 +161,17 @@
         }
 
         .hero-desc {
-            font-size: 0.8rem; /* Scaled down slightly on mobile to prevent overflow clipping */
+            font-size: 1.15rem;
             color: var(--text-sub);
-            max-width: 95vw;
+            max-width: 90%;
             line-height: 1.45;
             margin-bottom: 2.5rem;
-            white-space: nowrap; /* Forces slogan on one single line */
-            overflow: hidden;
-            text-overflow: ellipsis;
+        }
+
+        .hero-desc br {
+            display: block;
+            content: "";
+            margin-top: 0.35rem;
         }
 
         .hero-ig-btn {
@@ -192,7 +196,7 @@
 
         .hero-ig-btn:active {
             transform: scale(0.97);
-            background-color: rgba(128, 128, 128, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         /* --- Content Container & Grid --- */
@@ -242,7 +246,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--text-sub);
+            color: var(--accent);
             font-weight: 600;
             margin-bottom: 0.4rem;
         }
@@ -304,7 +308,7 @@
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         .portal-front {
@@ -371,7 +375,7 @@
         .back-role {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-sub);
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 1rem;
@@ -390,14 +394,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--text-main);
-            color: var(--bg-color);
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
             text-decoration: none;
             padding: 0.75rem 2rem;
             border-radius: 22px;
             font-size: 0.95rem;
             font-weight: 600;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(220, 39, 67, 0.2);
         }
 
         .portal-close {
@@ -434,7 +438,7 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border-left: 1px solid var(--border);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
             z-index: 150;
             transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             padding: 5rem 1.5rem 1.5rem;
@@ -469,61 +473,68 @@
 
         .setting-btn-opt.active {
             background: var(--accent);
-            color: var(--bg-color);
+            color: #ffffff;
         }
 
-        /* --- Cookie Banner --- */
+        /* --- Scalable & Perfect Cookie Banner --- */
         .cookie-banner {
             position: fixed;
-            bottom: -200px;
+            bottom: -300px;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 2rem);
-            max-width: 480px;
+            width: calc(100% - 32px);
+            max-width: 860px; 
             background: var(--cookie-bg);
             border: 1px solid var(--cookie-border);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 20px;
-            padding: 1.25rem;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            padding: 20px 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
             z-index: 2000;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 16px;
             transition: bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cookie-banner.is-visible {
-            bottom: 1.5rem;
+            bottom: 24px;
         }
 
+        /* Fixed absolute sizes prevent text scaling layout breakages */
         .cookie-text {
-            font-size: 0.88rem;
-            line-height: 1.45;
+            font-size: 14px !important;
+            line-height: 1.45 !important;
             color: var(--text-main);
+            text-align: left;
+            flex: 1;
         }
 
         .cookie-text span {
             color: var(--text-sub);
             display: block;
-            margin-top: 0.2rem;
-            font-size: 0.8rem;
+            margin-top: 4px;
+            font-size: 12px !important;
+            text-align: left;
         }
 
         .cookie-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 8px;
             justify-content: flex-end;
+            align-items: center;
+            flex-shrink: 0;
         }
 
         .cookie-btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.85rem;
+            padding: 10px 20px;
+            font-size: 13.5px !important;
             font-weight: 600;
             border-radius: 10px;
             border: none;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .cookie-btn-accept {
@@ -543,30 +554,29 @@
                 font-size: 3.8rem; 
                 letter-spacing: -2px; 
                 margin-bottom: 1.5rem;
-                white-space: normal;
+                white-space: nowrap;
             }
             .hero-desc { 
-                font-size: 1.2rem; /* Adjusted desktop size to ensure comfortable fit on a single line */
-                margin-bottom: 2rem; 
-                max-width: 100vw;
+                font-size: 1.5rem; 
+                margin-bottom: 2.5rem; 
+                max-width: 900px;
             }
-            .section-title { font-size: 2.5rem; margin-bottom: 3rem; }
             header { padding: 0 2rem; }
-            .card-static:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+            .card-static:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
             .card-static:hover .card-arrow { transform: translateX(4px); opacity: 1; }
-            .hero-ig-btn:hover { transform: translateY(-2px) scale(1.02); background-color: rgba(128, 128, 128, 0.15); }
+            .hero-ig-btn:hover { transform: translateY(-2px) scale(1.02); background-color: rgba(255, 255, 255, 0.12); }
             [data-theme="light"] .hero-ig-btn:hover { background-color: #333336; opacity: 0.9; }
             .portal-close:hover { background: var(--close-btn-hover); opacity: 1 !important; }
             .settings-panel { width: 320px; right: -350px; padding: 6rem 2rem 2rem; }
             
+            /* Enforce horizontal alignment layout on larger screens */
             .cookie-banner {
-                flex-direction: row;
-                max-width: 700px;
+                flex-direction: row !important;
                 align-items: center;
                 justify-content: space-between;
-                padding: 1rem 1.5rem;
+                gap: 24px;
+                padding: 20px 28px;
             }
-            .cookie-text { max-width: 70%; }
         }
     </style>
 </head>
@@ -636,7 +646,7 @@
                     <h3 class="back-name" id="backName">姓名</h3>
                     <div class="back-role" id="backRole">職位</div>
                     <p class="back-bio" id="backBio">個人簡介載入中...</p>
-                    <a href="https://instagram.com" target="_blank" class="back-ig-btn">
+                    <a href="https://instagram.com" target="_blank" class="back-ig-btn" id="backIgLink">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
                         Instagram
                     </a>
@@ -685,7 +695,7 @@
             },
             'en-us': {
                 school: "YUEN LONG MERCHANTS ASSOCIATION SECONDARY SCHOOL",
-                slogan: "2026-2027 Student Council Candidate Cabinet — Uniting stars, growing together with our campus.",
+                slogan: "2026-2027 Student Council Candidate Cabinet<br>Uniting stars, growing together with our campus.",
                 teamTitle: "Cabinet Members",
                 theme: "Appearance", lang: "Language", textSize: "Text Size",
                 dark: "Dark", light: "Light",
@@ -709,20 +719,20 @@
         };
 
         const members = [
-            { role: 'president', key: 'Xu Chak Long', emoji: '🌟' },
-            { role: 'vice_president', key: 'Ng Hoi Laam', emoji: '⚡' },
-            { role: 'vice_president', key: 'Ku Ho Yin', emoji: '☄️' },
-            { role: 'general_affairs', key: 'Yip Tsz Leong', emoji: '🛠️' },
-            { role: 'general_affairs', key: 'Chan Yu Hin', emoji: '⚙️' },
-            { role: 'designer', key: 'Lam Queenie', emoji: '🎨' },
-            { role: 'designer', key: 'Yik Ho Sing', emoji: '🖌️' },
-            { role: 'publication', key: 'Chan Wai Ki', emoji: '📢' },
-            { role: 'publication', key: 'Lam Wai Ho', emoji: '🤝' },
-            { role: 'academics', key: 'Chan Yu Ting', emoji: '📚' },
-            { role: 'treasurer', key: 'Tsang Yiu Mak', emoji: '💰' },
-            { role: 'welfare', key: 'Chu Ho Him', emoji: '🎁' },
-            { role: 'welfare', key: 'Yau Chi Kiu', emoji: '🍀' },
-            { role: 'secretary', key: 'Cheng Yu Hon Mac', emoji: '✍️' }
+            { role: 'president', key: 'Xu Chak Long', emoji: '🌟', ig: 'chaklong_xu' },
+            { role: 'vice_president', key: 'Ng Hoi Laam', emoji: '⚡', ig: 'hoilaam_ng' },
+            { role: 'vice_president', key: 'Ku Ho Yin', emoji: '☄️', ig: 'hoyin_ku' },
+            { role: 'general_affairs', key: 'Yip Tsz Leong', emoji: '🛠️', ig: 'tszleong_yip' },
+            { role: 'general_affairs', key: 'Chan Yu Hin', emoji: '⚙️', ig: 'yuhin_chan' },
+            { role: 'designer', key: 'Lam Queenie', emoji: '🎨', ig: 'queenie_lam' },
+            { role: 'designer', key: 'Yik Ho Sing', emoji: '🖌️', ig: 'hosing_yik' },
+            { role: 'publication', key: 'Chan Wai Ki', emoji: '📢', ig: 'waiki_chan' },
+            { role: 'publication', key: 'Lam Wai Ho', emoji: '🤝', ig: 'waiho_lam' },
+            { role: 'academics', key: 'Chan Yu Ting', emoji: '📚', ig: 'yuting_chan' },
+            { role: 'treasurer', key: 'Tsang Yiu Mak', emoji: '💰', ig: 'yiumak_tsang' },
+            { role: 'welfare', key: 'Chu Ho Him', emoji: '🎁', ig: 'hohim_chu' },
+            { role: 'welfare', key: 'Yau Chi Kiu', emoji: '🍀', ig: 'chikiu_yau' },
+            { role: 'secretary', key: 'Cheng Yu Hon Mac', emoji: '✍️', ig: 'yuhonmac_cheng' }
         ];
 
         // --- Core Cookie Utilities ---
@@ -742,7 +752,6 @@
         let currentLang = 'zh';
         let isCookieAllowed = getCookie('cookieConsent') === 'allowed';
 
-        // Default theme status explicitly to LIGHT
         let savedTheme = isCookieAllowed ? (getCookie('prefTheme') || 'light') : 'light';
         let savedSize = isCookieAllowed ? (getCookie('prefSize') || 'md') : 'md';
         let savedLang = isCookieAllowed ? (getCookie('prefLang') || 'zh') : 'zh';
@@ -784,6 +793,9 @@
             document.getElementById('backName').innerText = i18n[currentLang].names[memberData.key];
             document.getElementById('backRole').innerText = i18n[currentLang].roles[memberData.role];
             document.getElementById('backBio').innerText = i18n[currentLang].bio;
+
+            const targetHandle = memberData.ig || 'masscratch';
+            document.getElementById('backIgLink').href = `https://instagram.com/${targetHandle}`;
 
             portalCard.style.transition = 'none';
             portalCard.style.transform = 'none';
@@ -887,7 +899,7 @@
         function updateLanguage() {
             const data = i18n[currentLang];
             document.getElementById('txtSchool').innerText = data.school;
-            document.getElementById('txtSlogan').innerText = data.slogan;
+            document.getElementById('txtSlogan').innerHTML = data.slogan; 
             document.getElementById('txtTeamTitle').innerText = data.teamTitle;
             document.getElementById('lblTheme').innerText = data.theme;
             document.getElementById('lblLang').innerText = data.lang;
